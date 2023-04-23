@@ -1,0 +1,9 @@
+.container {
+    
+    color:aliceblue;
+}
+
+.contentInfo {
+    display: flex;
+    justify-content: space-around;
+}

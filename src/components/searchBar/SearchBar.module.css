@@ -1,0 +1,23 @@
+.container{
+    display:flex;
+    justify-content: center;
+}
+
+input{
+    background-color: rgba(0, 255, 255, 0.699);
+    font-family: cursive;
+    border-radius: 10px 0 0 10px;
+}
+
+button { /*al no tener . no es clase, se aplican a todos los elementos que son botones, NO LINKS*/
+    border-radius: 0 10px 10px 0;
+    border-color: aqua;
+    color: aqua;
+    background-color: gray;
+}
+
+button:hover{
+    color: gray;
+    background-color:  aqua;
+    cursor:pointer;
+}

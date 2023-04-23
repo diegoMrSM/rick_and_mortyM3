@@ -1,0 +1,71 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    height: 270px;
+    border: solid 2px black;
+    border-radius: 20px;
+    background-color: aliceblue;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6)
+}
+
+.container:hover{
+    transform: scale(1.1)
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: flex-end; /*para que aparezca arriba a la derecha de la Card*/
+}
+
+.button {
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-top: 10px;
+    border: none;
+    background-color: red;
+    color: aliceblue;
+}
+
+.button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+img{
+    width: 200px;
+    border-radius: 10px 10px 0 0;
+}
+
+.imageContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 10px;
+    align-items: center;
+    }
+
+.name{
+    background-color: rgba(0, 255, 255, 0.6);
+    position: absolute;
+    margin-bottom: 0px;
+}
+
+.propsContainer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(31, 30, 30);
+    color:rgba(0, 255, 255, 0.6);
+    border-radius: 0 0 10px 10px;
+}
+
+.propsContainer h2{
+    margin: 0;
+   
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
