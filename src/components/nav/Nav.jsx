@@ -16,6 +16,7 @@ console.log(props)
         <div className={styles.container}>
             <NavLinkMe to="/home">Home</NavLinkMe>
             <NavLinkMe to="/about">About</NavLinkMe>
+            <NavLinkMe to="/favorites">Favorites</NavLinkMe>
             <SearchBar onSearch={(characterID) =>props.onSearch(characterID)}/>
             
         </div>

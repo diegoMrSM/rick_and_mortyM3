@@ -15,7 +15,7 @@ export default function Detail(props){
     }, [])// repasar esta parte en caso de poner detailId dentro de los corchetes para que sea "dinamico"
     return(
         <div className={styles.container}>
-            <button onClick={()=> navigate("/")}>Regresar</button>
+            <button onClick={()=> navigate("/home")}>Regresar</button>
          <div className={styles.contentInfo }> {/*para separar en dos , izq el contenid, derecha imagen*/ }
            <div>
             <h1>Name: {character.name}</h1>

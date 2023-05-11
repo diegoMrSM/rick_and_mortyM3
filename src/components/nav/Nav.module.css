@@ -1,6 +1,6 @@
 .container {
         display: grid;
-        grid-template-columns: 20% 20% 60%;
+        grid-template-columns: 20% 20% 20% 20%;
         background-color:aliceblue;
         padding:10px;
         border-radius:20px;
