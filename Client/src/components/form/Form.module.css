@@ -1,0 +1,19 @@
+.container{
+    
+    display: flex;
+    background-color: rgba(77, 3, 173, 0.534);
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    border-radius: 20px;
+    margin:50px;
+    
+    
+        
+}
+
+
+.warning {
+    border-color: red;
+}
