@@ -4,10 +4,10 @@ import styles from "./Detail.module.css"
 
 export default function Detail(props){
     const navigate = useNavigate()
-    const {detailId} = useParams() //captura el parametro enviado en la ruta que dirije a este componente
+    const {id} = useParams() //captura el parametro enviado en la ruta que dirije a este componente
     const [character, setCharacter] = useState({}) 
     useEffect(()=>{
-        fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
+        fetch(`http://localhost:3001/rickandmorty/character/${id}`)
         .then((res)=> res.json())
         .then((data)=> {data.name ? setCharacter(data): alert("No hay personajes con ese nombre")})
         .catch((err)=> {console.log(err)

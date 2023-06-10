@@ -11,6 +11,7 @@ import Detail from "./components/detail/detail" // por qué no puedo ponerle D m
 import Form from "./components/form/Form";
 import Favorites from "./components/favorites/Favorites"
 import {Provider} from "redux"
+import axios from 'axios'
 
 
 function App () {
@@ -23,12 +24,12 @@ function App () {
     gender: 'Male',
     image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
  };*/
- const [acces, setAcces] = useState(false)
+ const [acces, setAccess] = useState(false)
  const userName ="diego@henry.com"
  const password = "die123"
 
  const onSearch = (id) =>{
-    fetch(`https://rickandmortyapi.com/api/character/${id}`)     //BUSCAMOS LA CARD POR ID CUANDO ESTAMOS EN EL NAV --> SearchBar  tiene un button que ejecuta esta funcion
+    fetch(`http://localhost:3001/rickandmorty/character/${id}`)     //BUSCAMOS LA CARD POR ID CUANDO ESTAMOS EN EL NAV --> SearchBar  tiene un button que ejecuta esta funcion
     .then((res)=>res.json())// se parsea el objeot json a objeto Javascript para luego hacer lo que quiera con el, en este caso iterarlo
     .then((data)=>{(data.name ? characters.filter((char)=>             
       char.id === data.id).length === 0: "")                            // IMPORTANTE: (debuggear para ver como funciona)
@@ -42,12 +43,15 @@ function App () {
   setCharacters(filtered) //setCharacters setea el arrat characters para mostrar
  };
 
- const login = (userData) => {  //**(3)**
-  if(userData.userName ===userName && userData.password === password){ //**(4)**
-  setAcces(true)// USUARIO SE CONSIGUE ACCEDER 
-  navigate("/home");   //**(4)**/    //  Y VA AL HOME
-    }
- }
+ function login(userData) {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home');
+      });
+   }
 
  useEffect(()=>{ !acces && navigate("/")},[acces]) //** (1)**//para que la aplicacion escuche cuando el usuario
                                                     // NO tenga acceso en el login, que lo redirija 

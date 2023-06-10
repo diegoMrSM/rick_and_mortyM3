@@ -1,0 +1,1 @@
+module.exports = [{email: 'diego@henry.com', password: 'die123'},{ email: '', password: ''}]; // base de datos de usuarios

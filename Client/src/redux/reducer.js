@@ -12,16 +12,10 @@ const reducer = (state = initialState, {type, payload}) =>{
     switch(type) {
 
             case ADD_FAVORITE:
-               /* let copy1 = state.myFavorites
-                    copy1.push(payload)*/
-                return {...state, 
-                    allCharacters: [...state.allCharacters, payload],
-                    myFavorites: [...state.allCharacters, payload]
-                 } // a la copia del arreglo myFavorites le agrego el payload
+                return { ...state, myFavorites: payload, allCharacters: payload };
 
             case DELETE_FAVORITE:
-                const filtered = state.myFavorites.filter((character) => {return character.id !== Number(payload)})
-                return {...state, myFavorites:filtered};
+                 return { ...state, myFavorites: payload };
                 
             case FILTER_CARDS: 
                  const filterByGender = [...state.allCharacters].filter((char) => char.gender.toLowerCase() === payload.toLowerCase());
