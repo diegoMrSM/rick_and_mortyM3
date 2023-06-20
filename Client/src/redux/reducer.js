@@ -1,6 +1,6 @@
 import {ADD_FAVORITE, DELETE_FAVORITE, FILTER_CARDS, ORDER_CARDS} from "./actionsTypes"
 
-const initialState = {
+export const initialState = {
     
     myFavorites: [],
     allCharacters: []
