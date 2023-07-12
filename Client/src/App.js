@@ -81,7 +81,7 @@ function App () {
           <Route path="/home" element={<Cards characters={characters} onClose={onClose} />}/> {/**4**/}
           <Route path="/about" element={<About />}/>
           <Route path="/favorites" element={<Favorites />}/>
-          <Route path="/detail/:detailId" element={<Detail/>}/>
+          <Route path="/detail/:id" element={<Detail/>}/>
         </Routes>
         
       </div>

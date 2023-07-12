@@ -7,12 +7,12 @@ export default function Detail(props){
     const {id} = useParams() //captura el parametro enviado en la ruta que dirije a este componente
     const [character, setCharacter] = useState({}) 
     useEffect(()=>{
-        fetch(`http://localhost:3001/rickandmorty/character/${id}`)
+        fetch(`https://rickandmortyapi.com/api/character/${id}`)
         .then((res)=> res.json())
         .then((data)=> {data.name ? setCharacter(data): alert("No hay personajes con ese nombre")})
         .catch((err)=> {console.log(err)
         alert("algo salio mal")})
-    }, [])// repasar esta parte en caso de poner detailId dentro de los corchetes para que sea "dinamico"
+    }, [id])// repasar esta parte en caso de poner detailId dentro de los corchetes para que sea "dinamico"
     return(
         <div className={styles.container}>
             <button onClick={()=> navigate("/home")}>Regresar</button>
